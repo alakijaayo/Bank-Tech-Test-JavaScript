@@ -1,3 +1,9 @@
+const mocha = require('mocha');
+const chai = require('chai');
+const Bank = require('../src/bank');
+var assert = require('chai').assert;
+
+
 describe ("Bank", function() {
   var bank
 });
@@ -7,10 +13,10 @@ beforeEach(function() {
 });
 
 it('starts with a balance of 0', function() {
-  expect(bank.balance()).toEqual(0)
+  assert.equal(bank.myBalance(), 0)
 })
 
 it('shows your balance when requested', function() {
   bank.deposit(50)
-  expect(bank.balance()).toEqual(50);
+  assert.equal(bank.myBalance(), 50);
 }) ;

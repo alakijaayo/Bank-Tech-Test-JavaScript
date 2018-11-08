@@ -2,9 +2,9 @@
   "name": "bank-tech-test-javascript",
   "version": "1.0.0",
   "description": "## Project description The aim of this project is to build a tech test for a bank which allows a user to interact with their bank account, allowing the user to make deposits, withdraws and be able to view their whole statement which gives them a complete list of their debits, credits and total balance.",
-  "main": "index.js",
+  "main": "bank.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -18,5 +18,9 @@
   "homepage": "https://github.com/alakijaayo/Bank-Tech-Test-JavaScript#readme",
   "devDependencies": {
     "mocha": "^5.2.0"
+  },
+  "dependencies": {
+    "chai": "^4.2.0",
+    "save-dev": "^2.0.0"
   }
 }
