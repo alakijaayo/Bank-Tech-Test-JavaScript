@@ -1,6 +1,7 @@
 function Bank() {
   this.MINIMUM_BALANCE = 0;
   this.balance = this.MINIMUM_BALANCE;
+  this.table = new Table
 }
 
 Bank.prototype.myBalance = function() {
