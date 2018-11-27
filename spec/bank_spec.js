@@ -21,6 +21,22 @@ it('shows your balance when requested', function() {
   assert.equal(bank.myBalance(), 50);
 })
 
+it('monitors the change in account balance', function() {
+  bank.deposit(50)
+  bank.withdraw(20)
+  bank.deposit(40)
+  assert.equal(bank.myBalance(), 70)
+})
+
+it('informs you that your money has been deposited', function() {
+  assert.equal(bank.deposit(50), 'Your money has been deposited!')
+})
+
+it('informs you that your money has been withdrawn', function() {
+  bank.deposit(50)
+  assert.equal(bank.withdraw(30), 'Your money has been withdrawn!')
+})
+
 it('raises an error if amount put in deposit is negative', function() {
   expect(function () { bank.deposit(-50) }).to.throw("Please put in correct amount you wish to deposit.");
 })

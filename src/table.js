@@ -3,17 +3,24 @@ function Table() {
   this.history = []
 }
 
+
 Table.prototype.deposit = function (money) {
-  var date = new Date
-  var gb = new Intl.DateTimeFormat('en-GB').format(date);
-  this.history.push([`${gb} || ${money} || || ${this.balance += money}`])
+  let date = new Date();
+  let dd = date.getDate();
+  let mm = date.getMonth() + 1;
+  let yy = date.getFullYear();
+  let current = dd + '/' + mm + '/' + yy;
+  this.history.push([`${current} || ${money} || || ${this.balance += money}`])
   return "Your money has been deposited!"
 };
 
 Table.prototype.withdraw = function (money) {
-  var date = new Date;
-  var gb = new Intl.DateTimeFormat('en-GB').format(date);
-  this.history.push([`${gb} || || ${-money} || ${this.balance -= money}`])
+  let date = new Date();
+  let dd = date.getDate();
+  let mm = date.getMonth() + 1;
+  let yy = date.getFullYear();
+  let current = dd + '/' + mm + '/' + yy;
+  this.history.push([`${current} || || ${-money} || ${this.balance -= money}`])
   return "Your money has been withdrawn!"
 };
 
