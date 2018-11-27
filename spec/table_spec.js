@@ -33,5 +33,10 @@ it('informs you that your money has been withdrawn', function() {
 
 it('stores money deposited into an array', function() {
   table.deposit(50)
-  expect(function () { bank.history }).to.include([ '11/27/2018 || 50 || || 50' ])
+  expect(function () { bank.history }).to.include([ '27/11/2018 || 50 || || 50' ])
+})
+
+it('stores money withdrawn into an array', function() {
+  table.withdraw(30)
+  expect( function () { bank.history}.to.include([ '27/11/2018 || || -30 || -30' ]))
 })
