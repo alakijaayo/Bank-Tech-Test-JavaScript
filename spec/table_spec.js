@@ -2,6 +2,7 @@ const mocha = require('mocha');
 const expect = require('chai').expect;
 const Table = require('../src/table');
 var assert = require('chai').assert;
+var MockDate = require('mockdate');
 
 describe ("Table", function () {
   var table
@@ -9,6 +10,7 @@ describe ("Table", function () {
 
 beforeEach(function() {
   table = new Table();
+  MockDate.set('11/28/2018')
 });
 
 it('Displays the balance available', function() {
@@ -34,11 +36,11 @@ it('informs you that your money has been withdrawn', function() {
 it('stores money deposited into an array', function() {
   table.deposit(50)
   expect(table.history).to.have.lengthOf(1)
-  expect(table.history).to.eql( [ [ '27/11/2018 || 50 || || 50' ] ])
+  expect(table.history).to.eql( [ [ '28/11/2018 || 50 || || 50' ] ])
 })
 
 it('stores money withdrawn into an array', function() {
   table.withdraw(30)
   expect(table.history).to.have.lengthOf(1)
-  expect(table.history).to.eql( [ [ '27/11/2018 || || -30 || -30' ] ])
+  expect(table.history).to.eql( [ [ '28/11/2018 || || -30 || -30' ] ])
 })
