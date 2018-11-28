@@ -19,7 +19,7 @@ Bank.prototype.deposit = function(money) {
 Bank.prototype.withdraw = function(money) {
   if (money <= 0 || typeof money === 'string') {
     throw "Please put in correct amount you wish to withdraw.";
-  } else if (this.table.balance - money <= this.MINIMUM_BALANCE) {
+  } else if (this.table.balance - money < this.MINIMUM_BALANCE) {
     throw "Not enough funds available. Please put in amount you wish to withdraw.";
   }
   return this.table.withdraw(money);
